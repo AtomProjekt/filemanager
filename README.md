@@ -105,5 +105,5 @@ make
 
 ---
 
-## автор AtomProjekt -> LenKa
+## авторы AtomProjekt -> LenKa и MegaGlist-69
 
