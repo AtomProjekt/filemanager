@@ -20,7 +20,7 @@ void Logger::init(const fs::path& logDir) {
     name << "log_" << std::put_time(&tm, "%Y%m%d_%H%M%S") << ".json";
     logFile_ = logDir / name.str();
  
-// инициализируем файл пустым массивом
+    // Инициализируем файл пустым массивом
     std::ofstream f(logFile_);
     f << "[\n";
     f.close();
@@ -41,7 +41,7 @@ void Logger::log(Level level, const std::string& action, const std::string& deta
  
     buffer_.push_back(entry.str());
  
-// Пишем сразу, чтобы не терять при краше
+    // Пишем сразу, чтобы не терять при краше
     if (!logFile_.empty()) {
         // Читаем текущее содержимое
         std::ifstream fin(logFile_);
@@ -49,19 +49,19 @@ void Logger::log(Level level, const std::string& action, const std::string& deta
                              std::istreambuf_iterator<char>());
         fin.close();
  
-// удаляем последний ] и пробельные символы
+        // Удаляем последний ']' и пробельные символы
         while (!content.empty() && (content.back() == '\n' || content.back() == '\r' ||
                                     content.back() == ' '  || content.back() == ']'))
             content.pop_back();
  
-// добавляем запятую если уже есть записи
+        // Добавляем запятую если уже есть записи
         bool needComma = content.find('{') != std::string::npos;
         if (needComma) content += ",\n";
  
         content += entry.str();
         content += "\n]";
  
-// перезаписываем файл
+        // Перезаписываем файл
         std::ofstream out(logFile_);
         out << content;
     }

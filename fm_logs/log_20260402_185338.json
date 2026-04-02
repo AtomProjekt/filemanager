@@ -1,0 +1,13 @@
+[  {
+    "timestamp": "2026-04-02 18:53:38",
+    "level": "INFO",
+    "action": "STARTUP",
+    "detail": "File Manager started"
+  },
+  {
+    "timestamp": "2026-04-02 18:53:53",
+    "level": "INFO",
+    "action": "COMMAND",
+    "detail": "help"
+  }
+]

@@ -14,10 +14,23 @@
 #include <thread>
 #include <atomic>
 #include <mutex>
- 
 namespace fs = std::filesystem;
  
-// анси цвета 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// анси цвета
 namespace Color {
     const std::string RESET   = "\033[0m";
     const std::string BOLD    = "\033[1m";
@@ -74,20 +87,4 @@ inline void printDivider(const std::string& ch = "─", int width = 60) {
     for (int i = 0; i < width; ++i) std::cout << ch;
     std::cout << Color::RESET << "\n";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
